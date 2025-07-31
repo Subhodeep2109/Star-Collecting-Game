@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.game-area {
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow: hidden;
+}
+
+.basket {
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(45deg, #8B4513, #D2691E);
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #654321;
+    cursor: pointer;
+    transition: left 0.1s ease;
+}
+
+.star {
+    position: absolute;
+    color: #FFD700;
+    font-size: 30px;
+    cursor: pointer;
+    animation: fall linear;
+    user-select: none;
+}
+
+.big-star {
+    font-size: 45px;
+    color: #FF6B35;
+    text-shadow: 0 0 10px #FF6B35;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.game-over h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-over p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#restartBtn {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#restartBtn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fall {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 100vh;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .game-header {
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .basket {
+        width: 60px;
+        height: 30px;
+    }
+    
+    .star {
+        font-size: 25px;
+    }
+    
+    .big-star {
+        font-size: 35px;
+    }
+}
